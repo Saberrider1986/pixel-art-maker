@@ -1,52 +1,36 @@
 // Developer Simon Wolf
-// Date: 21.09.20 - v0.1
+// Date: 21.09.20 - v 0.1
 // Udacity Pixel Art Maker - Project
 
 // Grid information variables
 var size = document.getElementById('sizePicker');
-var color = document.getElementById('colorPicker');
-var width = document.getElementById('inputWidth');
-var height = document.getElementById('inputHeight');
 var canvas = document.getElementById('pixelCanvas');
 var table = document.getElementById('table');
 
-
-// Select color input
-const colorValue =  color.value();
-colorValue.addEventListener('click', function(e1))
-
-function e2 () {
-if ($(this).attr('style')) {
-    $(this).removeAttr('style')
-  } else {
-    $(this).attr('style', 'background-color' + color.value());
-  }
-
-$(colorValue.removeEventListener('click', function(e1))
+// Select color value input
+var color = document.getElementById('colorPicker').value;
 
 // Select size input
-const gridHeight = document.querySelectorAll('.inputHeight');
-const gridWidth = document.querySelectorAll('.inputWidth');
+const gridHeight = document.querySelector('#inputHeight').value;
+const gridWidth = document.querySelector('#inputWidth').value;
 
 // When size is submitted by the user, call makeGrid()
-const heightValue = height.value();
-const widthValue = width.value();
-
-$(size).addEventListener('click', function(e2))
-$(size).submit(function(e2)) {
+size.addEventListener('submit', function (e) {
   e.preventDefault();
-  makeGrid(heightValue, widthValue) {
-}
-$(size).removeEventListener('click', function(e2))
-// Loop
+  makeGrid(gridHeight, gridWidth);
+})
+
+// makeGrid Function details
 
 function makeGrid(x,y) {
-    $('tr').remove();
-
-    for (var tally = 1; tally <= x; tally++) {
-      $('canvas').append('<tr id=table' + meter +'></tr>'');
-      for (var meter = 1; meter <= y; meter++) {
-        $('table').append('<td' + meter +'></td>'');
-      }
+// Clear old grid first
+canvas.innerHTML = null;
+// Loop
+    for (var x = 1; x <= gridHeight; x++) {
+      var row = canvas.insertRow(); {
+        for (var y = 1; y <= gridWidth; y++);
+        row.insertCell();
+      };
     }
+  };
 // Your code goes here!
