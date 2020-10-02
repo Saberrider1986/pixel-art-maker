@@ -26,7 +26,7 @@ canvas.innerHTML = "";
 for (var h = 0; h <= gridHeight; h++) {
 var row = canvas.insertRow(h);
     for (var w = 0; w <= gridWidth; w++); {
-        var cell = row.insertCell(-1);
+        var cell = row.insertCell(h);
         cell.addEventListener('click', function (event) {
           cell.style.backgroundColor = color.value;
         })
