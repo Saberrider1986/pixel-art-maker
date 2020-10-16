@@ -13,17 +13,19 @@ var gridWidth = document.querySelector('#inputWidth').value;
 size.addEventListener('submit', function (event) {
   gridHeight = document.querySelector('#inputHeight').value;
   gridWidth = document.querySelector('#inputWidth').value;
-  makeGrid(gridHeight, gridWidth)});
+  makeGrid(gridHeight, gridWidth);
+});
 
-// makeGrid Function details
+// makeGrid Function details & loops for making the canvas
 function makeGrid(gridHeight, gridWidth) {
 event.preventDefault();
 canvas.innerHTML = "";
-for (var h = 0; h <= gridHeight; h++) {
+for (var h = 0; h < gridHeight; h++) {
   var row = canvas.insertRow(h);
-    for (var w = 0; w <= gridWidth; w++) {
+    for (var w = 0; w < gridWidth; w++) {
       var cell = row.insertCell(w);
-      canvas.addEventListener('click', function (event) {
+      // Coloring cells with click
+      cell.addEventListener('click', function (event) {
         event.target.style.backgroundColor = color.value;
       });
     }
