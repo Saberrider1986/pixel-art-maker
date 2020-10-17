@@ -1,5 +1,5 @@
 // Developer Simon Wolf
-// Date: 21.09.20 - v 0.1 02.10.2020 v 0.2
+// Date: 21.09.20 - v 0.1 02.10.2020 v 0.2 - v 0.3 17.10.20
 // Udacity Pixel Art Maker - Project
 
 //DOM variables
@@ -10,24 +10,30 @@ var gridHeight = document.querySelector('#inputHeight').value;
 var gridWidth = document.querySelector('#inputWidth').value;
 
 // When size is submitted by the user, call makeGrid()
-size.addEventListener('submit', function (event) {
-  gridHeight = document.querySelector('#inputHeight').value;
-  gridWidth = document.querySelector('#inputWidth').value;
-  makeGrid(gridHeight, gridWidth);
+size.addEventListener('submit', function(event) {
+    gridHeight = document.querySelector('#inputHeight').value;
+    gridWidth = document.querySelector('#inputWidth').value;
+    makeGrid(gridHeight, gridWidth);
 });
 
 // makeGrid Function details & loops for making the canvas
+/**
+ * @function makeGrid
+ * @param   {number} numRows     the number of rows in the table
+ * @param   {number} numColumns    the number of columns in the table
+ * @description Takes 2 integers and creates an HTML table
+ */
 function makeGrid(gridHeight, gridWidth) {
-event.preventDefault();
-canvas.innerHTML = "";
-for (var h = 0; h < gridHeight; h++) {
-  var row = canvas.insertRow(h);
-    for (var w = 0; w < gridWidth; w++) {
-      var cell = row.insertCell(w);
-      // Coloring cells with click
-      cell.addEventListener('click', function (event) {
-        event.target.style.backgroundColor = color.value;
-      });
+    event.preventDefault();
+    canvas.innerHTML = "";
+    for (var h = 0; h < gridHeight; h++) {
+        var row = canvas.insertRow(h);
+        for (var w = 0; w < gridWidth; w++) {
+            var cell = row.insertCell(w);
+            // Coloring cells with click
+            cell.addEventListener('click', function(event) {
+                event.target.style.backgroundColor = color.value;
+            });
+        }
     }
-  }
 }
